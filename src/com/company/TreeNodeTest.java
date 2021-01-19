@@ -38,6 +38,7 @@ public class TreeNodeTest {
                 }
             }
         }
+        return list;
     }
 
     public static List<Integer> preTravel(TreeNode root){

@@ -84,8 +84,9 @@ public class MyPriorityQueue<E extends Comparable<E>> {
     }
 
     void replace(E e){
-        E e = data.get(0);
-
+        E old = data.get(0);
+        data.set(0, e);
+        siftDown(0);
     }
 
 

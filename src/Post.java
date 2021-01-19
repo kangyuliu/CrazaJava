@@ -160,6 +160,38 @@ public class Post {
         sumPath(root.left, sum, ret, path);
         sumPath(root.right, sum, ret, path);
     }
+
+
+    //路径path和   双递归
+    int pathSum3(TreeNode root, int target){
+       if(root == null) return 0;
+       return pathCount(root, target) + pathSum3(root.left,target) + pathSum3(root.right,target);
+    }
+
+    int pathCount(TreeNode root, int target){
+        if(root == null){
+            return 0;
+        }
+        int result = 0;
+        target = target - root.val;
+        if(target == 0){
+            result++;
+        }
+        return  result + pathCount(root.left, target) + pathCount(root.right,target);
+    }
+
+    /*
+    [1,2,2]
+    []
+    [1]
+    [1,2]
+    [1,2,2]
+
+     */
+
+
+
+
 }
 
 class TreeNode {
