@@ -1,7 +1,8 @@
 package com.company;
 
 public class Person {
-    private final Name name;
+    private  Name name;
+    private Person(){}
     public Person(Name name){
         this.name = new Name(name.getFirstName(), name.getLastName());
     }

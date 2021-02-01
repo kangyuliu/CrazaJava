@@ -42,7 +42,7 @@ public class LRUCache {
             count++;
             if(count > capacity){
                 DLinkedNode tail = popTail();
-                cache.remove(tail.key);
+                //cache.remove(tail.key);
                 count--;
             }
         }else {
@@ -86,6 +86,7 @@ public class LRUCache {
     private DLinkedNode popTail(){
         DLinkedNode res = tail.before;
         removeNode(res);
+        cache.remove(res.key);
         return res;
     }
 
